@@ -30,6 +30,6 @@ class VideoReaction extends Model
 
     public function video_sizes()
     {
-        return $this->hasMany('App\VideoSize');
+        return $this->hasMany('App\VideoSize', 'video_reaction_id' , 'id');
     }
 }
