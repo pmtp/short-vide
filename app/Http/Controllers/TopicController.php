@@ -25,6 +25,8 @@ class TopicController extends Controller
             $video_reaction->user;
         }
 
+        $topic->number_participants = $topic->video_reactions->groupby('user_id')->count();
+        
         return response($topic, 200)
             ->header('Content-Type', 'application/json');
     }
