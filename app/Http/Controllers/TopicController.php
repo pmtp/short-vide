@@ -22,6 +22,7 @@ class TopicController extends Controller
 
         foreach ($topic->video_reactions as $video_reaction){
             $video_reaction->video_sizes;
+            $video_reaction->user;
         }
 
         return response($topic, 200)
